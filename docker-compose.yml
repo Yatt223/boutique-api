@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:17
+    container_name: boutique-db
+    environment:
+      POSTGRES_DB: boutique
+      POSTGRES_USER: boutique
+      POSTGRES_PASSWORD: boutique
+    ports:
+      - "5432:5432"
+    volumes:
+      - boutique-data:/var/lib/postgresql/data
+
+volumes:
+  boutique-data:
